@@ -1,0 +1,77 @@
+---
+html_document:
+  mathjax: http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+output:
+  html_document:
+    code_folding: show
+    number_sections: false
+title: "Computing probabilities using R"
+---
+<style type="text/css">
+body {
+font-size: 17px;
+}
+.tabbed-pane { 
+border-style: solid;
+border-top-style: none;
+border-width: 1px;
+border-color: #e2e2e2; 
+padding: 10px;
+}
+.section h1 {
+padding-top: 100px;
+font-size: 41px;
+}
+.section h2 {
+padding-top: 120px;
+}
+.section h3 {
+padding-top: 90px;
+}
+.section h4 {
+padding-top: 90px;
+}
+</style>
+
+<script src="//yihui.name/js/math-code.js"></script>
+<!-- Just one possible MathJax CDN below. You may use others. -->
+<script async
+  src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, cache = TRUE)
+```
+
+____
+
+R can compute a variety of probabilities for many families of discrete and continuous distributions (Binomial, Poisson, Normal, etc.)
+
+- `dfamily(x = x, parameters)` computes the **PMF** for discrete r.v.s or **PDF** for continuous r.v.s of family evaluated at $x$.
+
+- `pfamily(q = x, parameters)` computes the **CDF** of family evaluated at $x$.
+
+### Examples
+
++ Suppose $X \sim Geometric(p = 0.3).$ Let's find $\Pr(X = 4) = p(4).$
+```{r}
+dgeom(4, 0.3)
+```
+
++ Suppose $X \sim Binomial(n = 7, p = 0.8).$ Let's find $\Pr(X \le 5) = F(5).$
+```{r}
+pbinom(5, 7, 0.8)
+```
+
++ Suppose $X \sim \mathcal{N}(\mu = 23, \sigma^2 = 14).$ Let's find $\Pr(20 < X \le 22) = F(22) - F(20).$
+```{r}
+pnorm(22, 23, sqrt(14)) - pnorm(20, 23, sqrt(14))
+```
+
++ If $X$ is a random variable which does not belong to any fistribution family but it's defined by a PDF like, for example, $f(x) = \dfrac{3}{8}(4x − 2x^2),\ 0 < x < 2.$ We can find probabilities like, for example, $\Pr(0.8 < X < 1.4)$ using the `intergrate()` function.
+```{r}
+f <- function(x) 3 / (8 * (4 * x - 2 * (x^2)))
+integrate(f, 0.8, 1.4)$value
+```
+
+#### <a href="https://acaimo.shinyapps.io/R_lab/" target="_blank">R lab tutorial</a>
