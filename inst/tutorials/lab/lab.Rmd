@@ -40,7 +40,7 @@ padding-top: 90px;
 </script>
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, eval = TRUE, cache = TRUE)
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, cache = FALSE)
 ```
 
 ____
