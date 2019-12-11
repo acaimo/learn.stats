@@ -1,5 +1,5 @@
 ---
-title: "Statistics 1 | R lab"
+title: "Statistics 1 - Lab 5"
 author: "Alberto Caimo"
 output: learnr::tutorial
 runtime: shiny_prerendered

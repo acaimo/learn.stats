@@ -1,0 +1,36 @@
+---
+title: "Statistics 1 - Lab 5"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+### Discrete random variables
+
++ To calculate $p(x) = \Pr(X = x)$ (PMF) where $X \sim Geometric(p)$ we can use the function `dgeom(x, prob)` where `x` is the outcome $x$ and `prob` is the probability of success $p.$ 
+
++ To calculate $F(x) = \Pr(X \le x)$ (CDF) where $X \sim Geometric(p)$ we can use the function `pgeom(x, prob)` where `x` is the outcome $x$ and `prob` is the probability of success $p.$ 
+
+For example, suppose that $X \sim Geometric(p = 0.32)$ and we want to calculate $\Pr(X > 4):$
+```{r, eval = TRUE, echo = TRUE}
+1 - pgeom(4, 0.32)
+```
+
+## Task
+
+1. Suppose $X \sim Binomial(n = 10, p = 0.2).$ Find $\Pr(X = 3 \mid X < 6).$
+```{r binomial, exercise = TRUE}
+
+```
+**Solution: `r dbinom(3, 10, 0.2) / pbinom(5, 10, 0.2)`**
+
+2. Suppose $X \sim Poisson(\lambda = 8).$ Find $\Pr(X < 4 \cup X > 9).$
+```{r poisson, exercise = TRUE}
+
+```
+**Solution: `r ppois(3, 8) + ppois(9, 8, lower.tail = FALSE)`**
