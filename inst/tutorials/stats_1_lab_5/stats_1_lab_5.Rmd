@@ -3,6 +3,37 @@ title: "Statistics 1 - Lab 5"
 output: learnr::tutorial
 runtime: shiny_prerendered
 ---
+<style type="text/css">
+body {
+font-size: 17px;
+}
+.tabbed-pane { 
+border-style: solid;
+border-top-style: none;
+border-width: 1px;
+border-color: #e2e2e2; 
+padding: 10px;
+}
+.section h1 {
+padding-top: 100px;
+font-size: 41px;
+}
+.section h2 {
+padding-top: 120px;
+}
+.section h3 {
+padding-top: 90px;
+}
+.section h4 {
+padding-top: 90px;
+}
+</style>
+
+<script src="//yihui.name/js/math-code.js"></script>
+<!-- Just one possible MathJax CDN below. You may use others. -->
+<script async
+  src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 ```{r setup, include=FALSE}
 library(learnr)
@@ -10,7 +41,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-### Discrete random variables
+## Discrete random variables
 
 + To calculate $p(x) = \Pr(X = x)$ (PMF) where $X \sim Geometric(p)$ we can use the function `dgeom(x, prob)` where `x` is the outcome $x$ and `prob` is the probability of success $p.$ 
 
@@ -23,17 +54,23 @@ For example, suppose that $X \sim Geometric(p = 0.32)$ and we want to calculate 
 
 + The R functions for the PMF and CDF of $X \sim Binomial(n, p)$ are `dbimom(x, size, prob)` and `pbimom(x, size, prob)` respectively, where `size` is the number of trials `n`.
 
-+ The R functions for the PMF and CDF of $X \sim Poisson(\lambda)$ are `dpois(x, lambda)` and `pbimom(x, lambda)` respectively, where `lambda` is the rate parameter
++ The R functions for the PMF and CDF of $X \sim Poisson(\lambda)$ are `dpois(x, lambda)` and `pbimom(x, lambda)` respectively, where `lambda` is the rate parameter $\lambda.$
 
 ## Task
 
-1. Suppose $X \sim Binomial(n = 10, p = 0.2).$ Find $\Pr(X = 3 \mid X < 6).$
+1. Suppose $X \sim Geometric(p = 0.27).$ Find $\Pr(X > 1 \cap X < 6).$
+```{r geometric, exercise = TRUE}
+
+```
+**Solution: `r pgeom(5, 0.27) - pgeom(1, 0.27)`**
+
+2. Suppose $X \sim Binomial(n = 10, p = 0.2).$ Find $\Pr(X = 3 \mid X < 6).$
 ```{r binomial, exercise = TRUE}
 
 ```
 **Solution: `r dbinom(3, 10, 0.2) / pbinom(5, 10, 0.2)`**
 
-2. Suppose $X \sim Poisson(\lambda = 8).$ Find $\Pr(X < 4 \cup X > 9).$
+3. Suppose $X \sim Poisson(\lambda = 8).$ Find $\Pr(X < 4 \cup X > 9).$
 ```{r poisson, exercise = TRUE}
 
 ```
