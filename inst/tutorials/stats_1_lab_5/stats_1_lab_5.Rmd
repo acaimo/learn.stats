@@ -21,6 +21,10 @@ For example, suppose that $X \sim Geometric(p = 0.32)$ and we want to calculate 
 1 - pgeom(4, 0.32)
 ```
 
++ The R functions for the PMF and CDF of $X \sim Binomial(n, p)$ are `dbimom(x, size, prob)` and `pbimom(x, size, prob)` respectively, where `size` is the number of trials `n`.
+
++ The R functions for the PMF and CDF of $X \sim Poisson(\lambda)$ are `dpois(x, lambda)` and `pbimom(x, lambda)` respectively, where `lambda` is the rate parameter
+
 ## Task
 
 1. Suppose $X \sim Binomial(n = 10, p = 0.2).$ Find $\Pr(X = 3 \mid X < 6).$

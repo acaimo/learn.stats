@@ -125,6 +125,10 @@ $(document).ready(function () {
 <p>For example, suppose that <span class="math inline">\(X \sim Geometric(p = 0.32)\)</span> and we want to calculate <span class="math inline">\(\Pr(X &gt; 4):\)</span></p>
 <pre class="r"><code>1 - pgeom(4, 0.32)</code></pre>
 <pre><code>## [1] 0.1453934</code></pre>
+<ul>
+<li><p>The R functions for the PMF and CDF of <span class="math inline">\(X \sim Binomial(n, p)\)</span> are <code>dbimom(x, size, prob)</code> and <code>pbimom(x, size, prob)</code> respectively, where <code>size</code> is the number of trials <code>n</code>.</p></li>
+<li><p>The R functions for the PMF and CDF of <span class="math inline">\(X \sim Poisson(\lambda)\)</span> are <code>dpois(x, lambda)</code> and <code>pbimom(x, lambda)</code> respectively, where <code>lambda</code> is the rate parameter</p></li>
+</ul>
 </div>
 <div id="section-task" class="section level2">
 <h2>Task</h2>
