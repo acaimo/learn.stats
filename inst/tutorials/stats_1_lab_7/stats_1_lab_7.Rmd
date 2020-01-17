@@ -1,6 +1,5 @@
 ---
-title: "Statistics 1 - Lab 5"
-author: "Alberto Caimo"
+title: "Stats 1 - Lab 7"
 output: learnr::tutorial
 runtime: shiny_prerendered
 ---
@@ -25,13 +24,11 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 **Solution: `r ppois(3, 8) + ppois(9, 8, lower.tail = FALSE)`**
 
-### Continuous random variables
+## Normal distribution
 
-+ Suppose $X$ is a (standard logistic) random variable with PDF: $f(x)=\dfrac{e^{x}}{\left(1+e^{x}\right)^{2}},\ x \in \mathbb{R}.$ Find $\Pr(-2 < X < 2).$
-```{r logistic, exercise = TRUE}
+...
 
-```
-**Solution: `r f <- function(x) exp(x) / ((1 + exp(x))^2); integrate(f, -2, 2)$value`**
+## Task
 
 + Suppose $X \sim \mathcal{N}(\mu = -3, \sigma^2 = 9).$ Find $\Pr(X > 0 \mid X < 2).$
 ```{r normal, exercise = TRUE}

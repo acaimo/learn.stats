@@ -56,6 +56,8 @@ For example, suppose that $X \sim Geometric(p = 0.32)$ and we want to calculate 
 
 + The R functions for the PMF and CDF of $X \sim Poisson(\lambda)$ are `dpois(x, lambda)` and `pbimom(x, lambda)` respectively, where `lambda` is the rate parameter $\lambda.$
 
+
+
 ## Task
 
 1. Suppose $X \sim Geometric(p = 0.27).$ Find $\Pr(X > 1 \cap X < 6).$
