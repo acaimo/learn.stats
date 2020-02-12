@@ -41,7 +41,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-## Discrete random variables
+# Discrete random variables
 
 + To calculate $p(x) = \Pr(X = x)$ (PMF) where $X \sim Geometric(p)$ we can use the function `dgeom(x, prob)` where `x` is the outcome $x$ and `prob` is the probability of success $p.$ 
 

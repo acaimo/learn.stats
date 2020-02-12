@@ -116,8 +116,8 @@ $(document).ready(function () {
 
 <div class="topics">
 
-<div id="section-continuous-random-variables" class="section level2">
-<h2>Continuous random variables</h2>
+<div id="section-continuous-random-variables" class="section level1">
+<h1>Continuous random variables</h1>
 <p>Suppose <span class="math inline">\(X\)</span> is a continuous random with pdf: <span class="math display">\[f(x) = \frac{1}{6}(x+x^3), \qquad 0 \leq x \leq 2.\]</span> We can use the <code>integrate()</code> function to calculate probabilities, e.g., <span class="math inline">\(\Pr(X &lt; 0.74):\)</span></p>
 <pre class="r"><code>f &lt;- function(x) 1 / 6 * (x + x^3)
 integrate(f, lower = 0, upper = 0.74)</code></pre>
@@ -127,7 +127,6 @@ integrate(f, lower = 0, upper = 0.74)</code></pre>
 F_0.74 </code></pre>
 <pre><code>## [1] 0.05812774</code></pre>
 <p>Infinity can be specified using <code>Inf</code></p>
-</div>
 <div id="section-task" class="section level2">
 <h2>Task</h2>
 <ul>
@@ -198,6 +197,7 @@ output$`tutorial-exercise-logistic_4-output` <- renderUI({
 </script>
 <!--/html_preserve--></li>
 </ul>
+</div>
 </div>
 
 </div> <!-- topics -->

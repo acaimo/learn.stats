@@ -116,13 +116,12 @@ $(document).ready(function () {
 
 <div class="topics">
 
-<div id="section-normal-distribution" class="section level2">
-<h2>Normal distribution</h2>
+<div id="section-normal-distribution" class="section level1">
+<h1>Normal distribution</h1>
 <ul>
 <li><p>To calculate <span class="math inline">\(F(x) = \Pr(X \le x)\)</span> (CDF) where <span class="math inline">\(X \sim \mathcal{N}(\mu, \sigma^2)\)</span> we can use the function <code>pnorm(x, mean, sd)</code> where <code>x</code> is the outcome <span class="math inline">\(x,\)</span> <code>mean</code> is <span class="math inline">\(\mu\)</span>, and <code>sd</code> is the <strong>standard deviation</strong> <span class="math inline">\(\sigma.\)</span></p></li>
 <li><p>To calculate quantiles <span class="math inline">\(x\)</span> such that <span class="math inline">\(\Pr(X \le x) &lt; p\)</span> (CDF) where <span class="math inline">\(X \sim \mathcal{N}(\mu, \sigma^2)\)</span> we can use the function <code>qnorm(p, mean, sd)</code> where <code>p</code> is <span class="math inline">\(p,\)</span> <code>mean</code> is <span class="math inline">\(\mu\)</span>, and <code>sd</code> is the <strong>standard deviation</strong> <span class="math inline">\(\sigma.\)</span></p></li>
 </ul>
-</div>
 <div id="section-task" class="section level2">
 <h2>Task</h2>
 <ul>
@@ -181,6 +180,7 @@ output$`tutorial-exercise-normal_3-output` <- renderUI({
 </script>
 <!--/html_preserve--></li>
 </ul>
+</div>
 </div>
 
 </div> <!-- topics -->

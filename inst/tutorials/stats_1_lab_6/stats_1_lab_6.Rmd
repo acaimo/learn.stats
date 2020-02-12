@@ -9,7 +9,7 @@ library(learnr)
 knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
 ```
 
-## Continuous random variables
+# Continuous random variables
 
 Suppose $X$ is a continuous random with pdf: 
 $$f(x) = \frac{1}{6}(x+x^3), \qquad 0 \leq x \leq 2.$$
