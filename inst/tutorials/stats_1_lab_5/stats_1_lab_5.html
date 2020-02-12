@@ -116,38 +116,13 @@ $(document).ready(function () {
 
 <div class="topics">
 
-<style type="text/css">
-body {
-font-size: 17px;
-}
-.tabbed-pane { 
-border-style: solid;
-border-top-style: none;
-border-width: 1px;
-border-color: #e2e2e2; 
-padding: 10px;
-}
-.section h1 {
-padding-top: 100px;
-font-size: 41px;
-}
-.section h2 {
-padding-top: 120px;
-}
-.section h3 {
-padding-top: 90px;
-}
-.section h4 {
-padding-top: 90px;
-}
-</style>
 <script src="//yihui.name/js/math-code.js"></script>
 <!-- Just one possible MathJax CDN below. You may use others. -->
 <script async
   src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
-<div id="section-discrete-random-variables" class="section level2">
-<h2>Discrete random variables</h2>
+<div id="section-discrete-random-variables" class="section level1">
+<h1>Discrete random variables</h1>
 <ul>
 <li><p>To calculate <span class="math inline">\(p(x) = \Pr(X = x)\)</span> (PMF) where <span class="math inline">\(X \sim Geometric(p)\)</span> we can use the function <code>dgeom(x, prob)</code> where <code>x</code> is the outcome <span class="math inline">\(x\)</span> and <code>prob</code> is the probability of success <span class="math inline">\(p.\)</span></p></li>
 <li><p>To calculate <span class="math inline">\(F(x) = \Pr(X \le x)\)</span> (CDF) where <span class="math inline">\(X \sim Geometric(p)\)</span> we can use the function <code>pgeom(x, prob)</code> where <code>x</code> is the outcome <span class="math inline">\(x\)</span> and <code>prob</code> is the probability of success <span class="math inline">\(p.\)</span></p></li>
@@ -155,14 +130,14 @@ padding-top: 90px;
 <p>For example, suppose that <span class="math inline">\(X \sim Geometric(p = 0.32)\)</span> and we want to calculate <span class="math inline">\(\Pr(X &gt; 4):\)</span></p>
 <pre class="r"><code>1 - pgeom(4, 0.32)</code></pre>
 <pre><code>## [1] 0.1453934</code></pre>
-<p>or</p>
-<pre class="r"><code>pgeom(4, 0.32, lower.tail = FALSE)</code></pre>
+<pre class="r"><code># or
+
+pgeom(4, 0.32, lower.tail = FALSE)</code></pre>
 <pre><code>## [1] 0.1453934</code></pre>
 <ul>
 <li><p>The R functions for the PMF and CDF of <span class="math inline">\(X \sim Binomial(n, p)\)</span> are <code>dbimom(x, size, prob)</code> and <code>pbimom(x, size, prob)</code> respectively, where <code>size</code> is the number of trials <code>n</code>.</p></li>
 <li><p>The R functions for the PMF and CDF of <span class="math inline">\(X \sim Poisson(\lambda)\)</span> are <code>dpois(x, lambda)</code> and <code>pbimom(x, lambda)</code> respectively, where <code>lambda</code> is the rate parameter <span class="math inline">\(\lambda.\)</span></p></li>
 </ul>
-</div>
 <div id="section-task" class="section level2">
 <h2>Task</h2>
 <ol style="list-style-type: decimal">
@@ -170,17 +145,17 @@ padding-top: 90px;
 <div class="tutorial-exercise" data-label="geometric" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL"}</script>
 </div>
-<p><strong>Solution: 0.3815658</strong></p></li>
+<p><strong>Solution:</strong> 0.3815658</p></li>
 <li>Suppose <span class="math inline">\(X \sim Binomial(n = 10, p = 0.2).\)</span> Find <span class="math inline">\(\Pr(X = 3 \mid X &lt; 6).\)</span>
 <div class="tutorial-exercise" data-label="binomial" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL"}</script>
 </div>
-<p><strong>Solution: 0.2026171</strong></p></li>
+<p><strong>Solution:</strong> 0.2026171</p></li>
 <li>Suppose <span class="math inline">\(X \sim Poisson(\lambda = 8).\)</span> Find <span class="math inline">\(\Pr(X &lt; 4 \cup X &gt; 9).\)</span>
 <div class="tutorial-exercise" data-label="poisson" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL"}</script>
 </div>
-<strong>Solution: 0.3257559</strong> 
+<strong>Solution:</strong> 0.3257559 
 <script type="application/shiny-prerendered" data-context="server-start">
 library(learnr)
 knitr::opts_chunk$set(echo = FALSE)
@@ -221,6 +196,7 @@ output$`tutorial-exercise-poisson-output` <- renderUI({
 </script>
 <!--/html_preserve--></li>
 </ol>
+</div>
 </div>
 
 </div> <!-- topics -->
