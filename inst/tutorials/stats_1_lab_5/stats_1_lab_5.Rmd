@@ -3,31 +3,6 @@ title: "Stats 1 - Lab 5"
 output: learnr::tutorial
 runtime: shiny_prerendered
 ---
-<style type="text/css">
-body {
-font-size: 17px;
-}
-.tabbed-pane { 
-border-style: solid;
-border-top-style: none;
-border-width: 1px;
-border-color: #e2e2e2; 
-padding: 10px;
-}
-.section h1 {
-padding-top: 100px;
-font-size: 41px;
-}
-.section h2 {
-padding-top: 120px;
-}
-.section h3 {
-padding-top: 90px;
-}
-.section h4 {
-padding-top: 90px;
-}
-</style>
 
 <script src="//yihui.name/js/math-code.js"></script>
 <!-- Just one possible MathJax CDN below. You may use others. -->
