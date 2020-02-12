@@ -31,7 +31,7 @@ F_0.74 <- integrate(f, lower = 0, upper = 0.74)$value
 F_0.74 
 ```
 
-Infinity can be specified using `Inf`
+Infinity can be specified using `Inf`.
 
 # Task
 

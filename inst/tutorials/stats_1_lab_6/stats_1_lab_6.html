@@ -116,6 +116,11 @@ $(document).ready(function () {
 
 <div class="topics">
 
+<script src="//yihui.name/js/math-code.js"></script>
+<!-- Just one possible MathJax CDN below. You may use others. -->
+<script async
+  src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 <div id="section-continuous-random-variables" class="section level1">
 <h1>Continuous random variables</h1>
 <p>Suppose <span class="math inline">\(X\)</span> is a continuous random with pdf: <span class="math display">\[f(x) = \frac{1}{6}(x+x^3), \qquad 0 \leq x \leq 2.\]</span> We can use the <code>integrate()</code> function to calculate probabilities, e.g., <span class="math inline">\(\Pr(X &lt; 0.74):\)</span></p>
@@ -126,9 +131,10 @@ integrate(f, lower = 0, upper = 0.74)</code></pre>
 <pre class="r"><code>F_0.74 &lt;- integrate(f, lower = 0, upper = 0.74)$value
 F_0.74 </code></pre>
 <pre><code>## [1] 0.05812774</code></pre>
-<p>Infinity can be specified using <code>Inf</code></p>
-<div id="section-task" class="section level2">
-<h2>Task</h2>
+<p>Infinity can be specified using <code>Inf</code>.</p>
+</div>
+<div id="section-task" class="section level1">
+<h1>Task</h1>
 <ul>
 <li>Suppose <span class="math inline">\(X\)</span> is a (standard logistic) random variable with PDF: <span class="math display">\[f(x)=\dfrac{e^{x}}{\left(1+e^{x}\right)^{2}},\ x \in \mathbb{R}.\]</span> Find <span class="math inline">\(\Pr(-2 &lt; X &lt; 2).\)</span>
 <div class="tutorial-exercise" data-label="logistic_1" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
@@ -197,7 +203,6 @@ output$`tutorial-exercise-logistic_4-output` <- renderUI({
 </script>
 <!--/html_preserve--></li>
 </ul>
-</div>
 </div>
 
 </div> <!-- topics -->
