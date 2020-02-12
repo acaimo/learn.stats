@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 + To calculate quantiles $x$ such that $\Pr(X \le x) < p$ (CDF) where $X \sim \mathcal{N}(\mu, \sigma^2)$ we can use the function `qnorm(p, mean, sd)` where `p` is $p,$ `mean` is $\mu$, and `sd` is the **standard deviation** $\sigma.$
 
-## Task
+# Task
 
 + Suppose $X$ is a standard Normal distribution. Find $\Pr(-0.1 < X < 0.2).$
 ```{r normal_1, exercise = TRUE}

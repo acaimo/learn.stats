@@ -33,7 +33,7 @@ F_0.74
 
 Infinity can be specified using `Inf`
 
-## Task
+# Task
 
 + Suppose $X$ is a (standard logistic) random variable with PDF: $$f(x)=\dfrac{e^{x}}{\left(1+e^{x}\right)^{2}},\ x \in \mathbb{R}.$$ Find $\Pr(-2 < X < 2).$
 ```{r logistic_1, exercise = TRUE}
