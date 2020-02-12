@@ -9,7 +9,6 @@ library(learnr)
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-
 # Normal distribution
 
 + To calculate $F(x) = \Pr(X \le x)$ (CDF) where $X \sim \mathcal{N}(\mu, \sigma^2)$ we can use the function `pnorm(x, mean, sd)` where `x` is the outcome $x,$ `mean` is $\mu$, and `sd` is the **standard deviation** $\sigma.$
