@@ -6,17 +6,53 @@ runtime: shiny_prerendered
 
 ```{r setup, include=FALSE}
 library(learnr)
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
 ```
 
 ## Continuous random variables
 
-...
+Suppose $X$ is a continuous random with pdf: 
+$$f(x) = \frac{1}{6}(x+x^3), \qquad 0 \leq x \leq 2.$$
+We can use the `integrate()` function to calculate probabilities, e.g., $\Pr(X < 0.74):$
+```{r}
+f <- function(x) 1 / 6 * (x + x^3)
+integrate(f, lower = 0, upper = 0.74)
+```
+
+To get the probability value only: 
+```{r} 
+F_0.74 <- integrate(f, lower = 0, upper = 0.74)$value
+F_0.74 
+```
+
+Infinity can be specified using `Inf`
 
 ## Task
 
-+ Suppose $X$ is a (standard logistic) random variable with PDF: $f(x)=\dfrac{e^{x}}{\left(1+e^{x}\right)^{2}},\ x \in \mathbb{R}.$ Find $\Pr(-2 < X < 2).$
-```{r logistic, exercise = TRUE}
++ Suppose $X$ is a (standard logistic) random variable with PDF: $$f(x)=\dfrac{e^{x}}{\left(1+e^{x}\right)^{2}},\ x \in \mathbb{R}.$$ Find $\Pr(-2 < X < 2).$
+```{r logistic_1, exercise = TRUE}
 
 ```
-**Solution: `r f <- function(x) exp(x) / ((1 + exp(x))^2); integrate(f, -2, 2)$value`**
+**Solution:** `r f <- function(x) exp(x) / ((1 + exp(x))^2); integrate(f, -2, 2)$value`
+
++ Find $\Pr(X < 0 \mid X < 2).$
+```{r logistic_2, exercise = TRUE}
+
+```
+**Solution:** `r f <- function(x) exp(x) / ((1 + exp(x))^2); integrate(f, -Inf, 0)$value / integrate(f, -Inf, 2)$value`
+
++ Find $E(X).$
+```{r logistic_3, exercise = TRUE}
+
+```
+**Solution:** `r fx <- function(x) x * exp(x) / ((1 + exp(x))^2); round(integrate(fx, -Inf, Inf)$value, 4)`
+
++ Use the `curve()` function to plot the pdf of $X.$
+```{r logistic_4, exercise = TRUE}
+
+```
+**Solution:** <br>
+```{r, echo = FALSE} 
+f <- function(x) exp(x) / ((1 + exp(x))^2)
+curve(f, xlim =  c(-5, 5))
+```

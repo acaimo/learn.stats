@@ -13,7 +13,7 @@
 <meta name="progressive" content="false" />
 <meta name="allow-skip" content="false" />
 
-<title>Stats 1 - Lab 5</title>
+<title>Stats 1 - Lab 7</title>
 
 
 <!-- highlightjs -->
@@ -116,71 +116,31 @@ $(document).ready(function () {
 
 <div class="topics">
 
-<style type="text/css">
-body {
-font-size: 17px;
-}
-.tabbed-pane { 
-border-style: solid;
-border-top-style: none;
-border-width: 1px;
-border-color: #e2e2e2; 
-padding: 10px;
-}
-.section h1 {
-padding-top: 100px;
-font-size: 41px;
-}
-.section h2 {
-padding-top: 120px;
-}
-.section h3 {
-padding-top: 90px;
-}
-.section h4 {
-padding-top: 90px;
-}
-</style>
-<script src="//yihui.name/js/math-code.js"></script>
-<!-- Just one possible MathJax CDN below. You may use others. -->
-<script async
-  src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<div id="section-discrete-random-variables" class="section level2">
-<h2>Discrete random variables</h2>
+<div id="section-normal-distribution" class="section level2">
+<h2>Normal distribution</h2>
 <ul>
-<li><p>To calculate <span class="math inline">\(p(x) = \Pr(X = x)\)</span> (PMF) where <span class="math inline">\(X \sim Geometric(p)\)</span> we can use the function <code>dgeom(x, prob)</code> where <code>x</code> is the outcome <span class="math inline">\(x\)</span> and <code>prob</code> is the probability of success <span class="math inline">\(p.\)</span></p></li>
-<li><p>To calculate <span class="math inline">\(F(x) = \Pr(X \le x)\)</span> (CDF) where <span class="math inline">\(X \sim Geometric(p)\)</span> we can use the function <code>pgeom(x, prob)</code> where <code>x</code> is the outcome <span class="math inline">\(x\)</span> and <code>prob</code> is the probability of success <span class="math inline">\(p.\)</span></p></li>
-</ul>
-<p>For example, suppose that <span class="math inline">\(X \sim Geometric(p = 0.32)\)</span> and we want to calculate <span class="math inline">\(\Pr(X &gt; 4):\)</span></p>
-<pre class="r"><code>1 - pgeom(4, 0.32)</code></pre>
-<pre><code>## [1] 0.1453934</code></pre>
-<p>or</p>
-<pre class="r"><code>pgeom(4, 0.32, lower.tail = FALSE)</code></pre>
-<pre><code>## [1] 0.1453934</code></pre>
-<ul>
-<li><p>The R functions for the PMF and CDF of <span class="math inline">\(X \sim Binomial(n, p)\)</span> are <code>dbimom(x, size, prob)</code> and <code>pbimom(x, size, prob)</code> respectively, where <code>size</code> is the number of trials <code>n</code>.</p></li>
-<li><p>The R functions for the PMF and CDF of <span class="math inline">\(X \sim Poisson(\lambda)\)</span> are <code>dpois(x, lambda)</code> and <code>pbimom(x, lambda)</code> respectively, where <code>lambda</code> is the rate parameter <span class="math inline">\(\lambda.\)</span></p></li>
+<li><p>To calculate <span class="math inline">\(F(x) = \Pr(X \le x)\)</span> (CDF) where <span class="math inline">\(X \sim \mathcal{N}(\mu, \sigma^2)\)</span> we can use the function <code>pnorm(x, mean, sd)</code> where <code>x</code> is the outcome <span class="math inline">\(x,\)</span> <code>mean</code> is <span class="math inline">\(\mu\)</span>, and <code>sd</code> is the <strong>standard deviation</strong> <span class="math inline">\(\sigma.\)</span></p></li>
+<li><p>To calculate quantiles <span class="math inline">\(x\)</span> such that <span class="math inline">\(\Pr(X \le x) &lt; p\)</span> (CDF) where <span class="math inline">\(X \sim \mathcal{N}(\mu, \sigma^2)\)</span> we can use the function <code>qnorm(p, mean, sd)</code> where <code>p</code> is <span class="math inline">\(p,\)</span> <code>mean</code> is <span class="math inline">\(\mu\)</span>, and <code>sd</code> is the <strong>standard deviation</strong> <span class="math inline">\(\sigma.\)</span></p></li>
 </ul>
 </div>
 <div id="section-task" class="section level2">
 <h2>Task</h2>
-<ol style="list-style-type: decimal">
-<li>Suppose <span class="math inline">\(X \sim Geometric(p = 0.27).\)</span> Find <span class="math inline">\(\Pr(X &gt; 1 \cap X \le 5).\)</span>
-<div class="tutorial-exercise" data-label="geometric" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<ul>
+<li>Suppose <span class="math inline">\(X\)</span> is a standard Normal distribution. Find <span class="math inline">\(\Pr(-0.1 &lt; X &lt; 0.2).\)</span>
+<div class="tutorial-exercise" data-label="normal_1" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL"}</script>
 </div>
-<p><strong>Solution: 0.3815658</strong></p></li>
-<li>Suppose <span class="math inline">\(X \sim Binomial(n = 10, p = 0.2).\)</span> Find <span class="math inline">\(\Pr(X = 3 \mid X &lt; 6).\)</span>
-<div class="tutorial-exercise" data-label="binomial" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<p><strong>Solution:</strong> 0.1190875</p></li>
+<li>Suppose <span class="math inline">\(X \sim \mathcal{N}(\mu = -3, \sigma^2 = 5.7).\)</span> Find <span class="math inline">\(\Pr(X &lt; -2 \mid X &lt; -1.3).\)</span>
+<div class="tutorial-exercise" data-label="normal_2" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL"}</script>
 </div>
-<p><strong>Solution: 0.2026171</strong></p></li>
-<li>Suppose <span class="math inline">\(X \sim Poisson(\lambda = 8).\)</span> Find <span class="math inline">\(\Pr(X &lt; 4 \cup X &gt; 9).\)</span>
-<div class="tutorial-exercise" data-label="poisson" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<p><strong>Solution:</strong> 0.8694576</p></li>
+<li>Suppose <span class="math inline">\(X \sim \mathcal{N}(\mu = 0.5, \sigma^2 = 9.2).\)</span> Find <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> such that <span class="math inline">\(\Pr(X &lt; x_1) = 0.13\)</span> and <span class="math inline">\(\Pr(X &gt; x_2) = 0.17.\)</span>
+<div class="tutorial-exercise" data-label="normal_3" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL"}</script>
 </div>
-<strong>Solution: 0.3257559</strong> 
+<strong>Solution: <span class="math inline">\(x_1 = -2.9165135,\)</span></strong> <strong><span class="math inline">\(x_2 = 3.3941265\)</span></strong> 
 <script type="application/shiny-prerendered" data-context="server-start">
 library(learnr)
 knitr::opts_chunk$set(echo = FALSE)
@@ -191,23 +151,23 @@ learnr:::register_http_handlers(session, metadata = NULL)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-geometric-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-geometric-code-editor`)), session)
-output$`tutorial-exercise-geometric-output` <- renderUI({
-  `tutorial-exercise-geometric-result`()
+`tutorial-exercise-normal_1-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-normal_1-code-editor`)), session)
+output$`tutorial-exercise-normal_1-output` <- renderUI({
+  `tutorial-exercise-normal_1-result`()
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-binomial-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-binomial-code-editor`)), session)
-output$`tutorial-exercise-binomial-output` <- renderUI({
-  `tutorial-exercise-binomial-result`()
+`tutorial-exercise-normal_2-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-normal_2-code-editor`)), session)
+output$`tutorial-exercise-normal_2-output` <- renderUI({
+  `tutorial-exercise-normal_2-result`()
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-poisson-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-poisson-code-editor`)), session)
-output$`tutorial-exercise-poisson-output` <- renderUI({
-  `tutorial-exercise-poisson-result`()
+`tutorial-exercise-normal_3-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-normal_3-code-editor`)), session)
+output$`tutorial-exercise-normal_3-output` <- renderUI({
+  `tutorial-exercise-normal_3-result`()
 })
 </script>
  <!--html_preserve-->
@@ -220,7 +180,7 @@ output$`tutorial-exercise-poisson-output` <- renderUI({
 {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]}},"value":[{"type":"character","attributes":{},"value":["backports","base","compiler","datasets","digest","evaluate","fastmap","graphics","grDevices","htmltools","htmlwidgets","httpuv","jsonlite","knitr","later","learnr","magrittr","markdown","methods","mime","promises","R6","Rcpp","rlang","rmarkdown","rprojroot","shiny","stats","stringi","stringr","tools","utils","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["1.1.5","3.6.1","3.6.1","3.6.1","0.6.23","0.14","1.0.1","3.6.1","3.6.1","0.4.0","1.5.1","1.5.2","1.6","1.27","1.0.0","0.10.0","1.5","1.1","3.6.1","0.8","1.1.0","2.4.1","1.0.3","0.4.2","2.0","1.3-2","1.4.0","3.6.1","1.4.5","1.4.0","3.6.1","3.6.1","2.1.2","0.12","1.8-4","2.2.0"]}]}]}
 </script>
 <!--/html_preserve--></li>
-</ol>
+</ul>
 </div>
 
 </div> <!-- topics -->
@@ -232,7 +192,7 @@ output$`tutorial-exercise-poisson-output` <- renderUI({
 
 <!-- begin doc-metadata -->
 <div id="doc-metadata">
-<h2 class="title toc-ignore" style="display:none;">Stats 1 - Lab 5</h2>
+<h2 class="title toc-ignore" style="display:none;">Stats 1 - Lab 7</h2>
 </div>
 <!-- end doc-metadata -->
 

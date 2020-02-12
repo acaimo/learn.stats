@@ -50,7 +50,12 @@ knitr::opts_chunk$set(echo = FALSE)
 For example, suppose that $X \sim Geometric(p = 0.32)$ and we want to calculate $\Pr(X > 4):$
 ```{r, eval = TRUE, echo = TRUE}
 1 - pgeom(4, 0.32)
+
+# or
+
+pgeom(4, 0.32, lower.tail = FALSE)
 ```
+
 
 + The R functions for the PMF and CDF of $X \sim Binomial(n, p)$ are `dbimom(x, size, prob)` and `pbimom(x, size, prob)` respectively, where `size` is the number of trials `n`.
 
@@ -60,20 +65,20 @@ For example, suppose that $X \sim Geometric(p = 0.32)$ and we want to calculate 
 
 ## Task
 
-1. Suppose $X \sim Geometric(p = 0.27).$ Find $\Pr(X > 1 \cap X < 6).$
+1. Suppose $X \sim Geometric(p = 0.27).$ Find $\Pr(X > 1 \cap X \le 5).$
 ```{r geometric, exercise = TRUE}
 
 ```
-**Solution: `r pgeom(5, 0.27) - pgeom(1, 0.27)`**
+**Solution:** `r pgeom(5, 0.27) - pgeom(1, 0.27)`
 
 2. Suppose $X \sim Binomial(n = 10, p = 0.2).$ Find $\Pr(X = 3 \mid X < 6).$
 ```{r binomial, exercise = TRUE}
 
 ```
-**Solution: `r dbinom(3, 10, 0.2) / pbinom(5, 10, 0.2)`**
+**Solution:** `r dbinom(3, 10, 0.2) / pbinom(5, 10, 0.2)`
 
 3. Suppose $X \sim Poisson(\lambda = 8).$ Find $\Pr(X < 4 \cup X > 9).$
 ```{r poisson, exercise = TRUE}
 
 ```
-**Solution: `r ppois(3, 8) + ppois(9, 8, lower.tail = FALSE)`**
+**Solution:** `r ppois(3, 8) + ppois(9, 8, lower.tail = FALSE)`
