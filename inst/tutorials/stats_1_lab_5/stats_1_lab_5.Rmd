@@ -1,5 +1,5 @@
 ---
-title: "Stats 1 - Lab 5"
+title: "Statistics 1"
 output: learnr::tutorial
 runtime: shiny_prerendered
 ---
@@ -15,7 +15,7 @@ library(learnr)
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# Discrete random variables
+# Geometric, Binomial and Poisson
 
 + To calculate $p(x) = \Pr(X = x)$ (PMF) where $X \sim Geometric(p)$ we can use the function `dgeom(x, prob)` where `x` is the outcome $x$ and `prob` is the probability of success $p.$ 
 
@@ -31,7 +31,7 @@ pgeom(4, 0.32, lower.tail = FALSE)
 ```
 
 
-+ The R functions for the PMF and CDF of $X \sim Binomial(n, p)$ are `dbimom(x, size, prob)` and `pbimom(x, size, prob)` respectively, where `size` is the number of trials `n`.
++ The R functions for the PMF and CDF of $X \sim Binomial(n, p)$ are `dbimom(x, size, prob)` and `pbimom(x, size, prob)` respectively, where `size` is the number of trials $n$ and `prob` is the probability of success $p.$
 
 + The R functions for the PMF and CDF of $X \sim Poisson(\lambda)$ are `dpois(x, lambda)` and `ppois(x, lambda)` respectively, where `lambda` is the rate parameter $\lambda.$
 

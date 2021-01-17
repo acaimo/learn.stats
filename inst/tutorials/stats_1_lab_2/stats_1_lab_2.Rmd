@@ -1,0 +1,68 @@
+---
+title: "Statistics 1"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+<script src="//yihui.name/js/math-code.js"></script>
+<!-- Just one possible MathJax CDN below. You may use others. -->
+<script async
+  src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Discrete random variables
+
++ Suppose $X$ is a discrete r.v. defined by the following PMF:
+$$p(x)=\left\{\begin{array}{cc}
+0.1, & x=-1 ; \\
+0.1, & x=0 ;\\
+0.4, & x=4 ;\\
+0.2, & x=5 ;\\
+0.2, & x=7.
+\end{array}\right.$$
+
+In R, we can create two separate objects: a vector for all possible outcomes and a vector for the pmf:
+```{r, eval = TRUE, echo = TRUE}
+x <- c(-1, 0, 4, 5, 7)
+p_x <- c(0.1, 0.1, 0.4, 0.2, 0.2)
+```
+
++ To calculate $\Pr(X = 4) = p(4):$
+```{r, eval = TRUE, echo = TRUE}
+p_x[x == 4]
+```
+
++ To compute the CDF we can use the `cumsum()` function:
+```{r, eval = TRUE, echo = TRUE}
+F_x <- cumsum(p_x)
+```
+
++ To calculate $\Pr(X \le 4) = F(4):$
+```{r, eval = TRUE, echo = TRUE}
+F_x[x == 4]
+```
+
+# Task
+
++ Find $\Pr(0 \le X < 6).$
+```{r drv_1, exercise = TRUE}
+
+```
+**Solution:** `r F_x[x == 5] - F_x[x == -1]`
+
++ Find $\Pr(X \le 4 \mid X \le 5).$
+```{r drv_2, exercise = TRUE}
+
+```
+**Solution:** `r F_x[x == 4] / F_x[x == 5]`
+
++ Find $\Pr(X < 4 \cup X > 5).$
+```{r drv_3, exercise = TRUE}
+
+```
+**Solution:** `r F_x[x == 0] + p_x[x == 7]`
