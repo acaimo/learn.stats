@@ -19,19 +19,19 @@ knitr::opts_chunk$set(echo = FALSE, eval = TRUE)
 
 + To calculate $p(x) = \Pr(X = x)$ (PMF) where $X \sim Geometric(p)$ we can use the function `dgeom(x, prob)` where `x` is the outcome $x$ and `prob` is the probability of success $p.$ 
 
-+ To calculate $F(x) = \Pr(X \le x)$ (CDF) where $X \sim Geometric(p)$ we can use the function `pgeom(x, prob)` where `x` is the outcome $x$ and `prob` is the probability of success $p.$ 
++ To calculate $F(x) = \Pr(X \le x)$ (CDF) where $X \sim Geometric(p)$ we can use the function `pgeom(q, prob)` where `q` is the outcome $x$ and `prob` is the probability of success $p.$ 
 
 For example, suppose that $X \sim Geometric(p = 0.32)$ and we want to calculate $\Pr(X > 4):$
 ```{r, eval = TRUE, echo = TRUE}
-1 - pgeom(4, 0.32)
+# Pr(X > 4) = 1 - Pr(X <= 4) = 1 - F(4)
+1 - pgeom(q = 4, prob = 0.32)
 
-# or
-
-pgeom(4, 0.32, lower.tail = FALSE)
+# or:
+pgeom(q = 4, prob = 0.32, lower.tail = FALSE)
 ```
 
 
-+ The R functions for the PMF and CDF of $X \sim Binomial(n, p)$ are `dbimom(x, size, prob)` and `pbimom(x, size, prob)` respectively, where `size` is the number of trials $n$ and `prob` is the probability of success $p.$
++ The R functions for the PMF and CDF of $X \sim Binomial(n, p)$ are `dbinom(x, size, prob)` and `pbinom(q, size, prob)` respectively, where `size` is the number of trials $n$ and `prob` is the probability of success $p.$
 
 + The R functions for the PMF and CDF of $X \sim Poisson(\lambda)$ are `dpois(x, lambda)` and `ppois(x, lambda)` respectively, where `lambda` is the rate parameter $\lambda.$
 
