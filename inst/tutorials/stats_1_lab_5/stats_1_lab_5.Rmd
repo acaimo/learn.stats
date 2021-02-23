@@ -33,7 +33,7 @@ pgeom(q = 4, prob = 0.32, lower.tail = FALSE)
 
 + The R functions for the PMF and CDF of $X \sim Binomial(n, p)$ are `dbinom(x, size, prob)` and `pbinom(q, size, prob)` respectively, where `size` is the number of trials $n$ and `prob` is the probability of success $p.$
 
-+ The R functions for the PMF and CDF of $X \sim Poisson(\lambda)$ are `dpois(x, lambda)` and `ppois(x, lambda)` respectively, where `lambda` is the rate parameter $\lambda.$
++ The R functions for the PMF and CDF of $X \sim Poisson(\lambda)$ are `dpois(x, lambda)` and `ppois(q, lambda)` respectively, where `lambda` is the parameter $\lambda.$
 
 # Task
 
