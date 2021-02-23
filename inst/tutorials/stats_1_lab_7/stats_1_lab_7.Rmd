@@ -12,14 +12,14 @@ runtime: shiny_prerendered
 
 ```{r setup, include=FALSE}
 library(learnr)
-knitr::opts_chunk$set(echo = FALSE, eval = TRUE)
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
 ```
 
 # Normal distribution
 
-+ To calculate $F(x) = \Pr(X \le x)$ (CDF) where $X \sim \mathcal{N}(\mu, \sigma^2)$ we can use the function `pnorm(x, mean, sd)` where `x` is the outcome $x,$ `mean` is $\mu$, and `sd` is the **standard deviation** $\sigma.$
++ To calculate $F(x) = \Pr(X \le x)$ (CDF) where $X \sim \mathcal{N}(\mu, \sigma^2)$ we can use the function `pnorm(q, mean, sd)` where `q` is an outcome, `mean` is $\mu$, and `sd` is the **standard deviation** $\sigma.$
 
-+ To calculate quantiles $x$ such that $\Pr(X \le x) < p$ (CDF) where $X \sim \mathcal{N}(\mu, \sigma^2)$ we can use the function `qnorm(p, mean, sd)` where `p` is $p,$ `mean` is $\mu$, and `sd` is the **standard deviation** $\sigma.$
++ To calculate quantiles $x$ such that $\Pr(X \le x) = p$ (CDF) where $X \sim \mathcal{N}(\mu, \sigma^2)$ we can use the function `qnorm(p, mean, sd)` where `p` is $p,$ `mean` is $\mu$, and `sd` is the **standard deviation** $\sigma.$
 
 # Task
 
