@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
 
 # Continuous random variables
 
-Suppose $X$ is a continuous random with pdf: 
+Suppose $X$ is a continuous random variable with pdf: 
 $$f(x) = \frac{1}{6}(x+x^3), \qquad 0 \leq x \leq 2.$$
 We can use the `integrate()` function to calculate probabilities, e.g., $\Pr(X < 0.74):$
 ```{r}
